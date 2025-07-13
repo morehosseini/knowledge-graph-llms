@@ -95,8 +95,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Senior Lecturer in Construction Technology  
 Faculty of Architecture, Building and Planning  
 The University of Melbourne  
-📧 reza.hosseini@unimelb.edu.au  
-🌐 [University Profile](https://findanexpert.unimelb.edu.au/profile/xxxxx)
+📧 mreza.hosseini@unimelb.edu.au  
+🌐 [University Profile]([https://findanexpert.unimelb.edu.au/profile/xxxxx](https://findanexpert.unimelb.edu.au/profile/862492-m.-reza-hosseini))
 
 ## Acknowledgments
 
