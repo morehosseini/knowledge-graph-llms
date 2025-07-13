@@ -4,29 +4,33 @@ on:
   push:
     paths:
       - 'data/graphs/*.graphml'
+  schedule:
+    - cron: '0 0 * * 0'    # Optional: run weekly on Sunday UTC
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install networkx pyvis
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install networkx pyvis
 
-      - name: Generate Graph HTML Previews
-        run: |
-          python scripts/generate_graph_previews.py
+    - name: Generate Graph HTML Previews
+      run: python scripts/generate_graph_previews.py
 
-      - name: Commit generated HTML
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Auto-generate graph previews"
-          file_pattern: docs/graphs/*.html
+    - name: Commit generated HTML
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Auto-generate graph previews"
+        file_pattern: docs/graphs/*.html
+        commit_user_name: "github-actions[bot]"
+        commit_user_email: "41898282+github-actions[bot]@users.noreply.github.com"
